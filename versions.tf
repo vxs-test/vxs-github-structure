@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "vxs-test"
+    workspaces {
+      name = "vxs-github-structure"
+    }
+  }
+
   required_providers {
     github = {
       source  = "integrations/github"

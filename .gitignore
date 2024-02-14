@@ -1,3 +1,0 @@
-*.out
-terraform.tfstate*
-.terraform
