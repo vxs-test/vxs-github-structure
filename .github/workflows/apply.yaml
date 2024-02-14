@@ -1,9 +1,9 @@
-name: Plan
-on: push
+name: Apply
+on: workflow_dispatch
 
 jobs:
 
-  tf-plan:
+  tf-apply:
     runs-on: ubuntu-22.04
     timeout-minutes: 5
     steps:
@@ -24,3 +24,6 @@ jobs:
 
       - name: Terraform plan
         run: terraform plan -var gh_token=${{ secrets.VXS_TEST_BOT }}
+
+      - name: Terraform apply
+        run: terraform apply
