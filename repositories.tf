@@ -32,8 +32,10 @@ locals {
 }
 
 module "repository" {
-  source   = "./modules/repository"
-  for_each = local.repo_to_team
-  name     = each.key
-  settings = each.value
+  source      = "./modules/repository"
+  for_each    = local.repo_to_team
+  name        = each.key
+  description = each.value.description
+  visibility  = each.value.visibility
+  teams       = each.value.teams
 }

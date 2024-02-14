@@ -1,4 +1,10 @@
 variable "name" {
   type = string
 }
-variable "settings" {}
+variable "description" {
+  type = string
+}
+variable "visibility" {
+  type = string
+}
+variable "teams" {}

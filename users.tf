@@ -1,12 +1,18 @@
-resource "github_membership" "org_membership" {
-  username = "stephanebruckert"
-  role     = "member"
+locals {
+  user_to_team = {
+    stephanebruckert = {
+      org_role = "member"
+      teams = {
+        (github_team.backend.id) = "maintainer"
+      }
+    }
+  }
 }
 
-resource "github_team_membership" "team_membership" {
-  username = "stephanebruckert"
-  role     = "maintainer"
-  team_id  = github_team.backend.id
-
-  depends_on = [github_membership.org_membership, github_team.backend]
+module "user" {
+  source   = "./modules/user"
+  for_each = local.user_to_team
+  username = each.key
+  org_role = each.value.org_role
+  teams    = each.value.teams
 }
