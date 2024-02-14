@@ -1,5 +1,5 @@
 locals {
-  repo_to_team = {
+  repos_to_teams = {
     vxs-github-structure = {
       description = "Should be private but made public for gh actions to fetch secrets in a free org"
       visibility  = "public"
@@ -33,7 +33,7 @@ locals {
 
 module "repository" {
   source      = "./modules/repository"
-  for_each    = local.repo_to_team
+  for_each    = local.repos_to_teams
   name        = each.key
   description = each.value.description
   visibility  = each.value.visibility
