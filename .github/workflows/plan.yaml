@@ -1,0 +1,26 @@
+name: Plan
+on: push
+
+jobs:
+
+  service-plans:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Terraform setup
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.7.3
+          cli_config_credentials_token: ${{ secrets.TF_CLOUD }}
+
+      - name: Terraform init
+        run: terraform init
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan
+        run: terraform plan -var gh_token=${{ secrets.VXS_TEST_BOT }}
