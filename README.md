@@ -82,3 +82,9 @@ Stored in Terraform Cloud under `vxs-test` project and `vxs-github-structure` wo
   tokens for an org rather than personal repositories, which means no need to create an admin user bot
   - https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/
 - what happens if a user doesn't accept an invite in time?
+- investigate: `has_projects`, `has_issues`, `has_discussions`, `has_wiki` implemented but don't seem to take effect
+- fix: new team must be added independently from user or repo membership
+
+## Current structure
+
+![current structure](https://github.com/vxs-test/vxs-github-structure/assets/1932338/5869efc8-8b40-44d7-af30-9d90e91e81fc)
