@@ -9,42 +9,42 @@ locals {
       has_wiki        = true
       teams           = {}
     }
-#    vxs-api = {
-#      description     = "Maintained by backend, read by frontend"
-#      visibility      = "private"
-#      has_projects    = true
-#      has_issues      = false
-#      has_discussions = true
-#      has_wiki        = false
-#
-#      teams = {
-#        (github_team.backend.id)  = "maintain"
-#        (github_team.frontend.id) = "pull"
-#      }
-#    }
-#    vxs-ui = {
-#      description     = "Maintained by frontend, read by frontend"
-#      visibility      = "private"
-#      has_projects    = true
-#      has_issues      = false
-#      has_discussions = true
-#      has_wiki        = false
-#      teams = {
-#        (github_team.frontend.id) = "maintain"
-#      }
-#    }
-#    vxs-sdk = {
-#      description     = "Written by frontend and backend"
-#      visibility      = "public"
-#      has_projects    = false
-#      has_issues      = true
-#      has_discussions = true
-#      has_wiki        = true
-#      teams = {
-#        (github_team.backend.id)  = "push"
-#        (github_team.frontend.id) = "push"
-#      }
-#    }
+    vxs-api = {
+      description     = "Maintained by backend, read by frontend"
+      visibility      = "private"
+      has_projects    = true
+      has_issues      = false
+      has_discussions = true
+      has_wiki        = false
+
+      teams = {
+        (github_team.backend.id)  = "maintain"
+        (github_team.frontend.id) = "pull"
+      }
+    }
+    vxs-ui = {
+      description     = "Maintained by frontend, read by frontend"
+      visibility      = "private"
+      has_projects    = true
+      has_issues      = false
+      has_discussions = true
+      has_wiki        = false
+      teams = {
+        (github_team.frontend.id) = "maintain"
+      }
+    }
+    vxs-sdk = {
+      description     = "Written by frontend and backend"
+      visibility      = "public"
+      has_projects    = false
+      has_issues      = true
+      has_discussions = true
+      has_wiki        = true
+      teams = {
+        (github_team.backend.id)  = "push"
+        (github_team.frontend.id) = "push"
+      }
+    }
   }
 }
 
