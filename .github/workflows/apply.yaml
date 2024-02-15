@@ -26,4 +26,4 @@ jobs:
         run: terraform plan -var gh_token=${{ secrets.GH_API_TOKEN }}
 
       - name: Terraform apply
-        run: terraform apply -var gh_token=${{ secrets.GH_API_TOKEN }}
+        run: terraform apply -var gh_token=${{ secrets.GH_API_TOKEN }} -auto-approve

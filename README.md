@@ -19,9 +19,13 @@ In [teams.tf](./teams.tf), add a `github_team` resource:
 In [repositories.tf](./repositories.tf), update `local.repos_to_teams`:
 
     vxs-api = {
-      description = "Maintained by backend, read by frontend"
-      visibility  = "private"
-      teams       = {
+      description     = "Maintained by backend, read by frontend"
+      visibility      = "private"
+      has_projects    = false
+      has_issues      = true
+      has_discussions = true
+      has_wiki        = true
+      teams           = {
         (github_team.backend.id)  = "maintain"
         (github_team.frontend.id) = "pull"
       }
