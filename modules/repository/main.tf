@@ -1,7 +1,11 @@
 resource "github_repository" "repo" {
-  name        = var.name
-  description = var.description
-  visibility  = var.visibility
+  name            = var.name
+  description     = var.description
+  visibility      = var.visibility
+  has_issues      = var.has_issues
+  has_projects    = var.has_projects
+  has_discussions = var.has_discussions
+  has_wiki        = var.has_wiki
 }
 
 resource "github_team_repository" "team_repo" {
