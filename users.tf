@@ -3,7 +3,7 @@ locals {
     stephanebruckert = {
       org_role = "member"
       teams = {
-        (github_team.backend.id) = "maintainer"
+#        (github_team.backend.id) = "maintainer"
       }
     }
   }
