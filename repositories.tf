@@ -34,7 +34,6 @@ locals {
       }
     }
     vxs-sdk = {
-      description     = "Written by frontend and backend"
       visibility      = "public"
       has_projects    = false
       has_issues      = true

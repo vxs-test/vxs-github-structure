@@ -3,6 +3,7 @@ variable "name" {
 }
 variable "description" {
   type = string
+  default = "some description"
 }
 variable "visibility" {
   type = string
